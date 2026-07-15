@@ -12,8 +12,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::all();   
-        return view('clients', compact('clients'));
+        $clients = Client::all();
+        return view('livewire.clients.list', compact('clients'));
     }
 
     /**
@@ -21,7 +21,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        dd('Create Client');
     }
 
     /**

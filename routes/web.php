@@ -11,11 +11,13 @@ Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-Route::get('clients', [ClientController::class, 'index']);
-
-Route::view('clients', 'clients')
+Route::get('clients', [ClientController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('clients');
+
+Route::get('clients/create', [ClientController::class, 'create'])
+    ->middleware(['auth', 'verified'])
+    ->name('clients.create');
 
 Route::view('invoices', 'invoices')
     ->middleware(['auth', 'verified'])
