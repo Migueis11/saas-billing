@@ -14,4 +14,25 @@
             </div>
         </div>
     </div>
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($clients as $client)
+                    <tr>
+                        <td>{{ $client->name }}</td>
+                        <td>{{ $client->email }}</td>
+                        <td>{{ $client->phone }}</td>
+                    </tr>           
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 </x-app-layout>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -9,6 +10,8 @@ Route::get('/', function () {
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+
+Route::get('clients', [ClientController::class, 'index']);
 
 Route::view('clients', 'clients')
     ->middleware(['auth', 'verified'])
